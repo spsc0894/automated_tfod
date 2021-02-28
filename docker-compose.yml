@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+        automate_tfod:
+                build: .
+                restart: always
+                devices:
+                        - /dev:/dev
+                volumes:
+                        - /tmp/.X11-unix:/tmp/.X11-unix
+                environment:
+                        DISPLAY: $DISPLAY
+
