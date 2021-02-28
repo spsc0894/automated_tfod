@@ -26,7 +26,7 @@ RUN apt-get install -y --no-install-recommends \
         libopenblas-dev \
         gnupg2 \
         protobuf-compiler \
-        python-dev \
+        python3-dev \
         wget \
         libgl1-mesa-glx \
         libglib2.0-0 \
@@ -38,10 +38,10 @@ ADD . /app
 WORKDIR /app/Tensorflow/models/research
 RUN protoc object_detection/protos/*.proto --python_out=.
 WORKDIR /app/cocoapi/PythonAPI
-RUN apt-get install -y --no-install-recommends python python-pip
-RUN python -m pip install setuptools numpy Cython
+RUN pip install setuptools numpy Cython
+RUN rm Makefile
+RUN cp /app/coco_mkfile/Makefile .
 RUN make
-RUN cp -r pycocotools /app/Tensorflow/models/research/
 WORKDIR /app/Tensorflow/models/research
 RUN cp object_detection/packages/tf2/setup.py .
 RUN python3 -m pip install .
