@@ -1,6 +1,6 @@
 # Automated Tensorflow Object Detection
 # Default model used:
-a href=http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz>ssd_resnet50_v1_fpn_640x640_coco17_tpu-8</a>
+<a href=http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz>ssd_resnet50_v1_fpn_640x640_coco17_tpu-8</a>
 
 ## Steps to train:
 1. Generate annotation files using LabelIMG in pascal VOC format and place them in ds directory(sample images and respective xml are provided)
