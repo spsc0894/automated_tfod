@@ -8,6 +8,8 @@ services:
                         - /dev:/dev
                 volumes:
                         - /tmp/.X11-unix:/tmp/.X11-unix
+                        - shared:/app/Tensorflow/workspace/training_demo/models/my_ssd_resnet50_v1_fpn
                 environment:
                         DISPLAY: $DISPLAY
-
+volumes:
+        shared: {}
